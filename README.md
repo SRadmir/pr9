@@ -103,32 +103,34 @@ else:
         print("список пустой")
 ```
 
-## задание 3 ##
+## задание 5 ##
 
 ```
-def isdigit(di):
-        return di.lstrip('-').replace('.', '', 1).isdigit()
-l=[]
-c=0
-while True:
-        a = input("Введите целое число (или end для завершения)")
-        b=a
-        if a == 'end':
-                print(l)
-                print("Кол-во четных - ",c)
-                print("Кол-во нечетных - ", len(l)-c)
-                break
-        if not isdigit(a):
-                print("Некорректо")
-                continue
-        if b.count('.')!=0:
-                print("Не целое число")
-        a=int(float((a)))
-        if b.count('.')==0 :
-                l.append(a)
-                if a%2==0:
-                        c+=1
+from random import randint
+l = [randint(-10, 10) for i in range(10)]
+a=max(l)
+b=min(l)
+indexa = l.index(a)
+indexb = l.index(b)
+print("Список до ",l)
+print("максимальный элемент", a, "с индексом", indexa)
+print("минимальный элемент", b, "с индексом", indexb)
+l[indexa], l[indexb] = l[indexb], l[indexa]  
+print("Список после",l)
+
                 
 ```
 
+## задание 6 ##
 
+```
+from random import randint
+l = [randint(-10, 10) for i in range(5)]
+ls=[]
+for i in range(0, len(l)):
+        ls.append(l[i-1])
+print("Рандомный список -",l)
+print('Измененный список -',ls)
+
+                
+```
