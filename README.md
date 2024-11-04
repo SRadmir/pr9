@@ -83,7 +83,52 @@ while True:
                 if a%2==0:
                         c+=1
                 
-
+```
+## задание 4 ##
 
 ```
+from random import randint
+l = [randint(-10, 10) for i in range(10)]
+answ=[]
+if len(l)!=0:
+        for i in range(0, len(l)):
+                if l[i]> l[i-1]:
+                        answ.append(l[i])
+        if len(answ)!=0:
+                print("Рандомный список", l)
+                print("Список элементов, которые больше предыдущего элемента", answ)
+        else:
+                print("В списке нет элементов, которые больше предыдущего элемента")
+else:
+        print("список пустой")
+```
+
+## задание 3 ##
+
+```
+def isdigit(di):
+        return di.lstrip('-').replace('.', '', 1).isdigit()
+l=[]
+c=0
+while True:
+        a = input("Введите целое число (или end для завершения)")
+        b=a
+        if a == 'end':
+                print(l)
+                print("Кол-во четных - ",c)
+                print("Кол-во нечетных - ", len(l)-c)
+                break
+        if not isdigit(a):
+                print("Некорректо")
+                continue
+        if b.count('.')!=0:
+                print("Не целое число")
+        a=int(float((a)))
+        if b.count('.')==0 :
+                l.append(a)
+                if a%2==0:
+                        c+=1
+                
+```
+
 
